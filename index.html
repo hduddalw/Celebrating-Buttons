@@ -14,6 +14,17 @@
 		<meta name="keyword" content="" />
 		<meta name="author" content="Harshad Satra" />
 
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+
+		<link rel="stylesheet" href="assets/css/style.css">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+
 		<!-- Compiled and minified CSS 
     		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     	-->
@@ -24,6 +35,205 @@
 	</head>
 
 	<body>
-		HTML Template
+		<div class="wrapper" id="app">
+			<!-- Intro -->
+			<section id="intro" class="grid hidden" :class="{'active': step === 'intro'}">
+				<span class="close" @click="gotoStep('info')">
+					<img src="assets/img/CButtons/CButton-32.svg">
+				</span>
+				<div class="top">
+					<ul class="anim-list">
+						<li>
+							<span class="inactive"><img src="assets/img/CButtons/CButton-01.svg"></span>
+							<span class="active"><img src="assets/img/CButtons/CButton-02.svg"></span>
+						</li>
+						<li>
+							<span class="inactive"><img src="assets/img/CButtons/CButton-03.svg"></span>
+							<span class="active"><img src="assets/img/CButtons/CButton-04.svg"></span>
+						</li>
+						<li>
+							<span class="inactive"><img src="assets/img/CButtons/CButton-05.svg"></span>
+							<span class="active"><img src="assets/img/CButtons/CButton-06.svg"></span>
+						</li>
+						<li>
+							<span class="inactive"><img src="assets/img/CButtons/CButton-07.svg"></span>
+							<span class="active"><img src="assets/img/CButtons/CButton-08.svg"></span>
+						</li>
+						<li>
+							<span class="inactive step"><img src="assets/img/CButtons/CButton-09.svg"></span>
+							<span class="active step"><img src="assets/img/CButtons/CButton-10.svg"></span>
+							<span class="active"><img src="assets/img/CButtons/CButton-11.svg"></span>
+						</li>
+						<li>
+							<span class="inactive"><img src="assets/img/CButtons/CButton-12.svg"></span>
+							<span class="active"><img src="assets/img/CButtons/CButton-13.svg"></span>
+						</li>
+						<li>
+							<span class="inactive"><img src="assets/img/CButtons/CButton-14.svg"></span>
+							<span class="active"><img src="assets/img/CButtons/CButton-15.svg"></span>
+						</li>
+					</ul>
+					<ul class="anim-list">
+						<li>
+							<span class="inactive"><img src="assets/img/CButtons/CButton-16.svg"></span>
+							<span class="active"><img src="assets/img/CButtons/CButton-17.svg"></span>
+						</li>
+						<li>
+							<span class="inactive"><img src="assets/img/CButtons/CButton-18.svg"></span>
+							<span class="active"><img src="assets/img/CButtons/CButton-19.svg"></span>
+						</li>
+						<li>
+							<span class="inactive"><img src="assets/img/CButtons/CButton-20.svg"></span>
+							<span class="active"><img src="assets/img/CButtons/CButton-21.svg"></span>
+						</li>
+						<li>
+							<span class="inactive"><img src="assets/img/CButtons/CButton-22.svg"></span>
+							<span class="active"><img src="assets/img/CButtons/CButton-23.svg"></span>
+						</li>
+					</ul>
+					<ul class="anim-list">
+						<li>
+							<span class="inactive"><img src="assets/img/CButtons/CButton-24.svg"></span>
+							<span class="active"><img src="assets/img/CButtons/CButton-25.svg"></span>
+						</li>
+						<li>
+							<span class="inactive"><img src="assets/img/CButtons/CButton-26.svg"></span>
+							<span class="active"><img src="assets/img/CButtons/CButton-27.svg"></span>
+						</li>
+						<li>
+							<span class="inactive"><img src="assets/img/CButtons/CButton-28.svg"></span>
+							<span class="active"><img src="assets/img/CButtons/CButton-29.svg"></span>
+						</li>
+						<li>
+							<span class="inactive"><img src="assets/img/CButtons/CButton-30.svg"></span>
+							<span class="active"><img src="assets/img/CButtons/CButton-31.svg"></span>
+						</li>
+					</ul>
+				</div>
+
+				<div class="bottom">
+					<ul class="action-buttons">
+						<li><a href="javascript:;" @click="gotoStep('step_1')" class="button">Start</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<!-- Info -->
+			<section id="info" class="grid hidden"  :class="{'active': step === 'info'}">
+				<span class="close" @click="gotoStep('intro')">
+					<img src="assets/img/CButtons/CButton-33.svg">
+				</span>
+				<div class="top">
+					<p>This website is designed to acknowledge the digital assets and components we use and interact with everyday.</p>
+					<p>Click start to create your own button.</p>
+				</div>
+				<div class="bottom">
+					<ul class="action-buttons">
+						<li><a href="" class="button" @click="gotoStep('step_2')">Start</a></li>
+					</ul>
+				</div>
+			</section>
+
+
+			<section id="step_1" class="grid hidden" :class="{'active': step === 'step_1'}">
+				<div class="top">
+					<p>To start creating a button, please enter your name.</p>
+					<input type="name" value="">
+				</div>
+				<div class="bottom">
+					<ul class="action-buttons">
+						<li><a href="javascript:;" class="button"  @click="gotoStep('step_2')">Continue</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="grid hidden" :class="{'active': step === 'step_2'}">
+				<div class="top">
+					<p>Select button style.</p>
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="bottom">
+					<ul class="action-buttons">
+						<li><a href="javascript:;" class="button"  @click="gotoStep('step_3')">Continue</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="grid hidden" :class="{'active': step === 'step_3'}">
+				<div class="top">
+					step3 : select button color
+				</div>
+				<div class="bottom">
+					<ul class="action-buttons">
+						<li><a href="javascript:;" class="button"  @click="gotoStep('step_4')">Continue</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="grid hidden" :class="{'active': step === 'step_4'}">
+				<div class="top">
+					step3 : select button hover color
+				</div>
+				<div class="bottom">
+					<ul class="action-buttons">
+						<li><a href="javascript:;" class="button"  @click="gotoStep('step_5')">Continue</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="grid hidden" :class="{'active': step === 'step_5'}">
+				<div class="top">
+					Buttoon thinkness
+				</div>
+				<div class="bottom">
+					<ul class="action-buttons">
+						<li><a href="javascript:;" class="button"  @click="gotoStep('step_6')">Continue</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="grid hidden" :class="{'active': step === 'step_6'}">
+				<div class="top">
+					buttpn Text
+				</div>
+				<div class="bottom">
+					<ul class="action-buttons">
+						<li><a href="javascript:;" class="button"  @click="gotoStep('step_7')">Continue</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="grid hidden" :class="{'active': step === 'step_6'}">
+				<div class="top">
+					Digital Buttons are
+				</div>
+				<div class="bottom">
+					<ul class="action-buttons">
+						<li><a href="javascript:;" class="button"  @click="gotoStep('last')">Continue</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="grid hidden" :class="{'active': step === 'last'}">
+				<div class="top">
+					Generated Button
+				</div>
+				<div class="bottom">
+					<ul class="action-buttons">
+						<li><a href="javascript:;" class="button"  @click="gotoStep('intro')">Continue</a></li>
+					</ul>
+				</div>
+			</section>
+
+
+		</div>
+
+
+		<script src="assets/js/vue.js"></script>
+		<script src="assets/js/script.js"></script>
 	</body>
 </html>
