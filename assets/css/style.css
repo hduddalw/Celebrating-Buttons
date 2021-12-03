@@ -36,6 +36,11 @@ p {
 
 .anim-list li {
   display: inline-block;
+  position: relative;
+}
+
+.anim-list li span {
+  cursor: pointer;
 }
 
 .anim-list li span img {
@@ -43,8 +48,14 @@ p {
   width: auto;
 }
 
+.anim-list li span.inactive {
+  position: relative;
+}
+
 .anim-list li span.active {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .button {

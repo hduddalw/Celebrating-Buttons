@@ -34,14 +34,22 @@ p{
 .anim-list{
     li{
         display: inline-block;
+        position: relative;
         span{
+            cursor: pointer;
             img{
                 height: 100px;
-                width: auto;
+                width: auto; 
+            }
+
+            &.inactive{
+                position: relative;
             }
 
             &.active{
-                display: none;
+                position: absolute;
+                top:0;
+                left:0;
             }
         }
     }

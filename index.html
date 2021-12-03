@@ -8,7 +8,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-		<title>HTML Template</title>
+		<title>Buttons</title>
 		<meta name="robots" content="index, follow" />
 		<meta name="description" content="" />
 		<meta name="keyword" content="" />
@@ -44,69 +44,69 @@
 				<div class="top">
 					<ul class="anim-list">
 						<li>
-							<span class="inactive"><img src="assets/img/CButtons/CButton-01.svg"></span>
-							<span class="active"><img src="assets/img/CButtons/CButton-02.svg"></span>
+							<span class="inactive" v-if="button >= 0" @click="showBtn(1)"><img src="assets/img/CButtons/CButton-01.svg"></span>
+							<span class="active" v-if="button >= 1"><img src="assets/img/CButtons/CButton-02.svg"></span>
 						</li>
 						<li>
-							<span class="inactive"><img src="assets/img/CButtons/CButton-03.svg"></span>
-							<span class="active"><img src="assets/img/CButtons/CButton-04.svg"></span>
+							<span class="inactive" v-if="button >= 1" @click="showBtn(2)"><img src="assets/img/CButtons/CButton-03.svg"></span>
+							<span class="active" v-if="button >= 2"><img src="assets/img/CButtons/CButton-04.svg"></span>
 						</li>
 						<li>
-							<span class="inactive"><img src="assets/img/CButtons/CButton-05.svg"></span>
-							<span class="active"><img src="assets/img/CButtons/CButton-06.svg"></span>
+							<span class="inactive" v-if="button >= 2" @click="showBtn(3)"><img src="assets/img/CButtons/CButton-05.svg"></span>
+							<span class="active" v-if="button >= 3"><img src="assets/img/CButtons/CButton-06.svg"></span>
 						</li>
 						<li>
-							<span class="inactive"><img src="assets/img/CButtons/CButton-07.svg"></span>
-							<span class="active"><img src="assets/img/CButtons/CButton-08.svg"></span>
+							<span class="inactive" v-if="button >= 3" @click="showBtn(4)"><img src="assets/img/CButtons/CButton-07.svg"></span>
+							<span class="active" v-if="button >= 4"><img src="assets/img/CButtons/CButton-08.svg"></span>
 						</li>
 						<li>
-							<span class="inactive step"><img src="assets/img/CButtons/CButton-09.svg"></span>
-							<span class="active step"><img src="assets/img/CButtons/CButton-10.svg"></span>
-							<span class="active"><img src="assets/img/CButtons/CButton-11.svg"></span>
+							<span class="inactive step"  v-if="button >= 4" @click="showBtn(5)"><img src="assets/img/CButtons/CButton-09.svg"></span>
+							<span class="active step" v-if="button >= 5" @click="showBtn(6)"><img src="assets/img/CButtons/CButton-10.svg"></span>
+							<span class="active" v-if="button >= 6"><img src="assets/img/CButtons/CButton-11.svg"></span>
 						</li>
 						<li>
-							<span class="inactive"><img src="assets/img/CButtons/CButton-12.svg"></span>
-							<span class="active"><img src="assets/img/CButtons/CButton-13.svg"></span>
+							<span class="inactive" v-if="button >= 6" @click="showBtn(7)"><img src="assets/img/CButtons/CButton-12.svg"></span>
+							<span class="active" v-if="button >= 7"><img src="assets/img/CButtons/CButton-13.svg"></span>
 						</li>
 						<li>
-							<span class="inactive"><img src="assets/img/CButtons/CButton-14.svg"></span>
-							<span class="active"><img src="assets/img/CButtons/CButton-15.svg"></span>
-						</li>
-					</ul>
-					<ul class="anim-list">
-						<li>
-							<span class="inactive"><img src="assets/img/CButtons/CButton-16.svg"></span>
-							<span class="active"><img src="assets/img/CButtons/CButton-17.svg"></span>
-						</li>
-						<li>
-							<span class="inactive"><img src="assets/img/CButtons/CButton-18.svg"></span>
-							<span class="active"><img src="assets/img/CButtons/CButton-19.svg"></span>
-						</li>
-						<li>
-							<span class="inactive"><img src="assets/img/CButtons/CButton-20.svg"></span>
-							<span class="active"><img src="assets/img/CButtons/CButton-21.svg"></span>
-						</li>
-						<li>
-							<span class="inactive"><img src="assets/img/CButtons/CButton-22.svg"></span>
-							<span class="active"><img src="assets/img/CButtons/CButton-23.svg"></span>
+							<span class="inactive" v-if="button >= 7" @click="showBtn(8)"><img src="assets/img/CButtons/CButton-14.svg"></span>
+							<span class="active" v-if="button >= 8"><img src="assets/img/CButtons/CButton-15.svg"></span>
 						</li>
 					</ul>
 					<ul class="anim-list">
 						<li>
-							<span class="inactive"><img src="assets/img/CButtons/CButton-24.svg"></span>
-							<span class="active"><img src="assets/img/CButtons/CButton-25.svg"></span>
+							<span class="inactive" v-if="button >= 8" @click="showBtn(9)"><img src="assets/img/CButtons/CButton-16.svg"></span>
+							<span class="active" v-if="button >= 9"><img src="assets/img/CButtons/CButton-17.svg"></span>
 						</li>
 						<li>
-							<span class="inactive"><img src="assets/img/CButtons/CButton-26.svg"></span>
-							<span class="active"><img src="assets/img/CButtons/CButton-27.svg"></span>
+							<span class="inactive" v-if="button >= 9" @click="showBtn(10)"><img src="assets/img/CButtons/CButton-18.svg"></span>
+							<span class="active" v-if="button >= 10"><img src="assets/img/CButtons/CButton-19.svg"></span>
 						</li>
 						<li>
-							<span class="inactive"><img src="assets/img/CButtons/CButton-28.svg"></span>
-							<span class="active"><img src="assets/img/CButtons/CButton-29.svg"></span>
+							<span class="inactive" v-if="button >= 10" @click="showBtn(11)"><img src="assets/img/CButtons/CButton-20.svg"></span>
+							<span class="active" v-if="button >= 11"><img src="assets/img/CButtons/CButton-21.svg"></span>
 						</li>
 						<li>
-							<span class="inactive"><img src="assets/img/CButtons/CButton-30.svg"></span>
-							<span class="active"><img src="assets/img/CButtons/CButton-31.svg"></span>
+							<span class="inactive" v-if="button >= 11" @click="showBtn(12)"><img src="assets/img/CButtons/CButton-22.svg"></span>
+							<span class="active" v-if="button >= 12"><img src="assets/img/CButtons/CButton-23.svg"></span>
+						</li>
+					</ul>
+					<ul class="anim-list">
+						<li>
+							<span class="inactive" v-if="button >= 12" @click="showBtn(13)"><img src="assets/img/CButtons/CButton-24.svg"></span>
+							<span class="active" v-if="button >= 13"><img src="assets/img/CButtons/CButton-25.svg"></span>
+						</li>
+						<li>
+							<span class="inactive" v-if="button >= 13" @click="showBtn(14)"><img src="assets/img/CButtons/CButton-26.svg"></span>
+							<span class="active" v-if="button >= 14"><img src="assets/img/CButtons/CButton-27.svg"></span>
+						</li>
+						<li>
+							<span class="inactive" v-if="button >= 14" @click="showBtn(15)"><img src="assets/img/CButtons/CButton-28.svg"></span>
+							<span class="active" v-if="button >= 15"><img src="assets/img/CButtons/CButton-29.svg"></span>
+						</li>
+						<li>
+							<span class="inactive" v-if="button >= 15" @click="showBtn(16)"><img src="assets/img/CButtons/CButton-30.svg"></span>
+							<span class="active" v-if="button >= 16"><img src="assets/img/CButtons/CButton-31.svg"></span>
 						</li>
 					</ul>
 				</div>

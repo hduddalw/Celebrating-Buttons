@@ -2,6 +2,7 @@ const app = new Vue({
 	el: "#app",
 	data: {
 		step: 'intro', // carrers,
+		button: 0
 	},
 	mounted() {
 		const self = this;
@@ -9,6 +10,9 @@ const app = new Vue({
 	methods: {
 		gotoStep(step) {
 			this.step = step;
+		},
+		showBtn(n){
+			this.button = n;
 		}
 	},
 })
