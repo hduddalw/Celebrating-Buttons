@@ -1,7 +1,7 @@
 const app = new Vue({
 	el: "#app",
 	data: {
-		step: 'step_2', // carrers,
+		step: 'intro', // carrers,
 		button: 0,
 		styles: [1,2,3,4],
 		colors: ['#fc7fc2', '#ff6943', '#ffb700', '#fee900', '#2d9ed1', '#01c367'],
