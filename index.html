@@ -38,7 +38,7 @@
 		<div class="wrapper" id="app">
 			<!-- Intro -->
 			<section id="intro" class="grid hidden" :class="{'active': step === 'intro'}">
-				<span class="close" @click="gotoStep('info')">
+				<span class="close" @click="gotoStep('info')" v-if="button >= 16">
 					<img src="assets/img/CButtons/CButton-32.svg">
 				</span>
 				<div class="top">
@@ -113,7 +113,7 @@
 
 				<div class="bottom">
 					<ul class="action-buttons">
-						<li><a href="javascript:;" @click="gotoStep('step_1')" class="button">Start</a></li>
+						<li v-if="button >= 16"><a href="javascript:;" @click="gotoStep('step_1')" class="button">Start</a></li>
 					</ul>
 				</div>
 			</section>
@@ -138,7 +138,7 @@
 			<section id="step_1" class="grid hidden" :class="{'active': step === 'step_1'}">
 				<div class="top">
 					<p>To start creating a button, please enter your name.</p>
-					<input type="name" value="">
+					<input type="name" v-model="gerenatedbtn.name" class="input-text" placeholder="eg. JOHN SNOW">
 				</div>
 				<div class="bottom">
 					<ul class="action-buttons">
@@ -150,10 +150,31 @@
 			<section class="grid hidden" :class="{'active': step === 'step_2'}">
 				<div class="top">
 					<p>Select button style.</p>
-					<ul>
-						<li></li>
-						<li></li>
-						<li></li>
+					<ul class="style-selector">
+						<li>
+							<span @click='gerenatedbtn.style = 2' :class="{'active': gerenatedbtn.style == 1}">
+								<img src="assets/img/CButtons/radio.svg">
+								<img src="assets/img/CButtons/btn-1.svg">
+							</span>
+						</li>
+						<li>
+							<span @click='gerenatedbtn.style = 2' :class="{'active': gerenatedbtn.style == 2}">
+								<img src="assets/img/CButtons/radio.svg">
+								<img src="assets/img/CButtons/btn-2.svg">
+							</span>
+						</li>
+						<li>
+							<span @click='gerenatedbtn.style = 3' :class="{'active': gerenatedbtn.style == 3}">
+								<img src="assets/img/CButtons/radio.svg">
+								<img src="assets/img/CButtons/btn-3.svg">
+							</span>
+						</li>
+						<li>
+							<span @click='gerenatedbtn.style = 4' :class="{'active': gerenatedbtn.style == 4}">
+								<img src="assets/img/CButtons/radio.svg">
+								<img src="assets/img/CButtons/btn-4.svg">
+							</span>
+						</li>
 					</ul>
 				</div>
 				<div class="bottom">
@@ -165,7 +186,10 @@
 
 			<section class="grid hidden" :class="{'active': step === 'step_3'}">
 				<div class="top">
-					step3 : select button color
+					<p>Select button color.</p>
+					<ul class="button-colors">
+						<li v-for="c in colors"><span :class="{'active': gerenatedbtn.color == c}" @click="gerenatedbtn.color = c" :style="{background: c}"></span></li>
+					</ul>
 				</div>
 				<div class="bottom">
 					<ul class="action-buttons">
@@ -176,7 +200,10 @@
 
 			<section class="grid hidden" :class="{'active': step === 'step_4'}">
 				<div class="top">
-					step3 : select button hover color
+					<p>Select color for hover state</p>
+					<ul class="button-colors">
+						<li v-for="c in colors"><span :class="{'active': gerenatedbtn.hovercolor == c}" @click="gerenatedbtn.hovercolor = c" :style="{background: c}"></span></li>
+					</ul>
 				</div>
 				<div class="bottom">
 					<ul class="action-buttons">
@@ -187,7 +214,12 @@
 
 			<section class="grid hidden" :class="{'active': step === 'step_5'}">
 				<div class="top">
-					Buttoon thinkness
+					<p>Select button thickness</p>
+					<div class="slidecontainer">
+						<span>1</span>
+						<input class="slider" type="range" v-model="gerenatedbtn.thickness" min="1"  max="5" class="slider" id="myRange">
+						<span>5</span>
+					</div>
 				</div>
 				<div class="bottom">
 					<ul class="action-buttons">
@@ -198,7 +230,8 @@
 
 			<section class="grid hidden" :class="{'active': step === 'step_6'}">
 				<div class="top">
-					buttpn Text
+					<p>Enter button text (max. 7 letters)</p>
+					<input type="name" v-model="gerenatedbtn.buttonText" class="input-text" placeholder="TAP">
 				</div>
 				<div class="bottom">
 					<ul class="action-buttons">
@@ -209,23 +242,21 @@
 
 			<section class="grid hidden" :class="{'active': step === 'step_6'}">
 				<div class="top">
-					Digital Buttons are
+					<p>Digital buttons are...</p>
+					<input type="name" v-model="gerenatedbtn.intro" class="input-text" placeholder="HERE TO STAY">
 				</div>
 				<div class="bottom">
 					<ul class="action-buttons">
-						<li><a href="javascript:;" class="button"  @click="gotoStep('last')">Continue</a></li>
+						<li><a href="javascript:;" class="button"  @click="gotoStep('last')">Generate</a></li>
 					</ul>
 				</div>
 			</section>
 
 			<section class="grid hidden" :class="{'active': step === 'last'}">
 				<div class="top">
-					Generated Button
-				</div>
-				<div class="bottom">
-					<ul class="action-buttons">
-						<li><a href="javascript:;" class="button"  @click="gotoStep('intro')">Continue</a></li>
-					</ul>
+					<div class="generated_btn">
+
+					</div>
 				</div>
 			</section>
 
